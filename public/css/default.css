@@ -7,16 +7,17 @@ body
      font-size:0.75em;
      height:100%;
      
-     background-color:#FFFFF7 !important;
+     background-color: white !important;
      background-image: none;
 }
 
 /*상단 네비바 색상*/
 #navibar{
-     background-color: #94D592 !important;
-     background-image: none;
+     background-color: #B3EEE1 !important;
+     background-image: url('app/assets/images/navbar.jpg');
      height: 50px;
      margin-top: 0px;
+     color:#676767;
 }
 /*대수능 평가원 기출문제 선택란*/
 #gichulneyeond_suntaek{

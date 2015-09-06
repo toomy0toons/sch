@@ -6,8 +6,14 @@ end
 
 gem 'devise'
 gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'therubyracer'
 gem 'bcrypt-ruby', '~> 3.0.0', :require => "bcrypt"
+
+gem 'carrierwave'
+gem 'fog'
+
+gem 'simple_form'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -9,7 +9,7 @@ class QuestionController < ApplicationController
         
         new_question = Question.new
         new_question.title = params[:title]
-        new_question.writer = params[:writer]
+        new_question.writer = current_user
         new_question.image = params[:image_file]
         new_question.description = params[:description]
         new_question.tag = params[:tag]

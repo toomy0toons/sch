@@ -51,7 +51,7 @@ class ProblemController < ApplicationController
         
     end
     
-    def sim201406
+    def sim201406b
         
     end
     
