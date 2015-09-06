@@ -1,0 +1,51 @@
+@charset "utf-8";
+
+body 
+{
+     margin:0;
+     padding-top:80px;
+     font-size:0.75em;
+     height:100%;
+     
+     background-color:#FFFFF7 !important;
+     background-image: none;
+}
+
+/*상단 네비바 색상*/
+#navibar{
+     background-color: #94D592 !important;
+     background-image: none;
+     height: 50px;
+     margin-top: 0px;
+}
+/*대수능 평가원 기출문제 선택란*/
+#gichulneyeond_suntaek{
+     margin-top:0;
+     position:center;
+     width:70%;
+     max-width:500px;
+     background-color: none !important;
+     background-image: none;
+}
+/*대수능 평가원 기출문제 ab형 선택버튼*/
+#ab_choice_button{
+     position:fixed;
+     width:100px;
+}
+
+/*대수능 평가원 기출문제 문제 선택버튼*/
+#gichulmunjae_suntaek{
+     position:fixed;
+     width:170px;
+     margin-left:150px;
+}
+
+/*대수능 평가원 기출문제 문제*/
+#munjae{
+     min-width:100%;
+     max-height:auto;
+}
+/*회원가입란*/
+#signupform{
+     
+}

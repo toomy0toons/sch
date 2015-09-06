@@ -1,0 +1,181 @@
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top" id ="navibar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="https://sch0916-seongwook-hong-1.c9.io/home/index"><span class="glyphicon glyphicon-pencil"></span>수채화</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="https://sch0916-seongwook-hong-1.c9.io/home/intro">서비스 소개</a></li>
+          <li><a href="https://sch0916-seongwook-hong-1.c9.io/question/look">질문</a></li>
+          <li><a href="https://sch0916-seongwook-hong-1.c9.io/home/simulation">대수능·평가원 기출문제</a></li>
+          <li><a href="https://sch0916-seongwook-hong-1.c9.io/home/workbook">시중 문제집</a></li>
+          <li><a href="https://sch0916-seongwook-hong-1.c9.io/home/mentor">멘토</a></li>
+          <!--<li class="dropdown">-->
+          <!--  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>-->
+          <!--  <ul class="dropdown-menu">-->
+          <!--    <li><a href="#">Page 1-1</a></li>-->
+          <!--    <li><a href="#">Page 1-2</a></li>-->
+          <!--    <li><a href="#">Page 1-3</a></li>-->
+          <!--  </ul>-->
+          <!--</li>-->
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="https://sch0916-seongwook-hong-1.c9.io/home/signup"><span class="glyphicon glyphicon-user"></span> 회원가입</a></li>
+          <li><a class="btn pull-right" data-toggle="modal" href="#login"><span class="glyphicon glyphicon-log-in"></span> 로그인</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="form-group">
+    <div class="container">
+      <div class="col-md-12">
+        <label for="sel1">모의고사 바로가기</label>
+        <select class="form-control" id="sel1" size="1" name="links" onchange="window.location.href=this.value;">
+          <option value="#">선택하기</a></option>
+          <option value="https://sch0916-seongwook-hong-1.c9.io/problem/sim201006a">2010년도 6월 평가원 모의고사</option>
+          <option value="https://sch0916-seongwook-hong-1.c9.io/problem/sim201009a">2010년도 9월 평가원 모의고사</option>
+          <option value="https://sch0916-seongwook-hong-1.c9.io/problem/sim201011a">2010년도 대학수학능력평가</option>
+          <option value="https://sch0916-seongwook-hong-1.c9.io/problem/sim201106a">2011년도 6월 평가원 모의고사</option>
+          <option value="https://sch0916-seongwook-hong-1.c9.io/problem/sim201109a">2011년도 9월 평가원 모의고사</option>
+          <option value="https://sch0916-seongwook-hong-1.c9.io/problem/sim201111a">2011년도 대학수학능력평가</option>
+          <option value="https://sch0916-seongwook-hong-1.c9.io/problem/sim201206a">2012년도 6월 평가원 모의고사</option>
+          <option value="https://sch0916-seongwook-hong-1.c9.io/problem/sim201209a">2012년도 9월 평가원 모의고사</option>
+          <option value="https://sch0916-seongwook-hong-1.c9.io/problem/sim201211a">2012년도 대학수학능력평가</option>
+          <option value="https://sch0916-seongwook-hong-1.c9.io/problem/sim201306a">2013년도 6월 평가원 모의고사</option>
+          <option value="https://sch0916-seongwook-hong-1.c9.io/problem/sim201309a">2013년도 9월 평가원 모의고사</option>
+          <option value="https://sch0916-seongwook-hong-1.c9.io/problem/sim201311a">2013년도 대학수학능력평가</option>
+          <option value="https://sch0916-seongwook-hong-1.c9.io/problem/sim201406a">2014년도 6월 평가원 모의고사</option>
+          <option value="https://sch0916-seongwook-hong-1.c9.io/problem/sim201409a">2014년도 9월 평가원 모의고사</option>
+          <option value="https://sch0916-seongwook-hong-1.c9.io/problem/sim201411a">2014년도 대학수학능력평가</option>
+          <option value="https://sch0916-seongwook-hong-1.c9.io/problem/sim201506a">2015년도 6월 평가원 모의고사</option>
+          <option value="https://sch0916-seongwook-hong-1.c9.io/problem/sim201509a">2015년도 9월 평가원 모의고사</option>
+          <option value="https://sch0916-seongwook-hong-1.c9.io/problem/sim201511a">2015년도 대학수학능력평가</option>
+        </select>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>오늘의 BEST 풀이 보러가기!</h1>
+        <a href="#" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-thumbs-up"></span> BEST풀이</a>
+      </div>
+    
+      <div class="row">
+        <div class="col-md-3">
+          <p>풀이1</p>
+        </div>
+        <div class="col-md-3"> 
+          <p>풀이2</p>
+        </div>
+        <div class="col-md-3"> 
+          <p>풀이3</p>
+        </div>
+        <div class="col-md-3">
+          <p>풀이4</p>
+        </div>
+        <div class="clearfix visible-lg"></div>
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; Bori-corporation</p>
+      </footer>
+    </div>
+  </div>
+  
+   <!--Modal -->
+  <div id="login" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+  
+       <!--Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">로그인</h4>
+        </div>
+        <div class="modal-body">
+          
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+        </div>
+        <div class="modal-footer">
+          <%= render "devise/shared/links" %>
+          <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+  
+<div class="modal hide fade in" id="loginModal">
+
+<div class="modal-header">
+
+<button class="close" data-dismiss="modal">x</button>
+
+<h2>Sign in</h2>
+
+</div>
+
+<div class="modal-body">
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end -%>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+
+<p>hihihihihihi</p>
+
+<div class="modal-footer">
+
+<%= render "devise/shared/links" %>
+
+</div>
+
+</div>
+</body>
