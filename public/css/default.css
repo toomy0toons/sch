@@ -1,5 +1,109 @@
 @charset "utf-8";
+
+
+/*답변form end*/
+body 
+{
+     margin:0px;
+     padding-top:50px;
+     font-size:0.75em;
+     height:100%;
+     position:center;
+     background-color: transparent !important;
+     background-image: none;
+}
+
+#new_user.new_user{
+    position:center;
+}
+
+
+.navbar-default {
+  background-color: #b3eee1  !important;
+  border-color: #81f0d7  !important;
+}
+.navbar-default .navbar-brand {
+  color: #5c5858 !important; 
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #2a81c7 !important;
+}
+.navbar-default .navbar-text {
+  color: #5c5858 !important;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #5c5858 !important;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #2a81c7   !important;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu {
+  background-color: #b3eee1   !important;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+  color: #5c5858   !important;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #2a81c7   !important;
+  background-color: #81f0d7   !important;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
+  background-color: #b3eee1   !important;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #2a81c7   !important;
+  background-color: #81f0d7   !important;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #2a81c7   !important;
+  background-color: #81f0d7   !important;
+}
+.navbar-default .navbar-toggle {
+  border-color: #81f0d7  !important;
+  background-color: #81f0d7  !important;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #81f0d7;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #5c5858 !important;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #5c5858 !important;
+}
+.navbar-default .navbar-link {
+  color: #5c5858 !important;
+}
+.navbar-default .navbar-link:hover {
+  color: #2a81c7 !important;
+} 
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #5c5858 !important;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #2a81c7 !important;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #2a81c7 !important;
+    background-color: #81f0d7 !important;
+  }
+}
+
 /*답변 form*/
+.form-style-6{
+    max-width: 1000px;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    margin: 10px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
 .form-style-5{
     max-width: 1000px;
     padding: 10px 20px;
@@ -102,124 +206,13 @@
 {
     background: #109177;
 }
-/*답변form end*/
-body 
-{
-     margin:0px;
-     padding-top:50px;
-     font-size:0.75em;
-     height:100%;
-     
-     background-color: transparent !important;
-     background-image: none;
-}
-#main_image{
-     width: 100%;
-     margin-top: 0px;
-}
-
-
-/*상단 네비바 색상*/
-.navbar{ 
-    background-image: none;
-}
-.navbar-default .navbar-brand {
-  color: #5c5858;
-}
-.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
-  color: #2a81c7;
-}
-.navbar-default .navbar-text {
-  color: #5c5858;
-}
-.navbar-default .navbar-nav > li > a {
-  color: #5c5858;
-}
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-  color: #2a81c7;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu {
-  background-color: #b3eee1;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
-  color: #5c5858;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
-.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
-  color: #2a81c7;
-  background-color: #81f0d7;
-}
-.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
-  background-color: #b3eee1;
-}
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-  color: #2a81c7;
-  background-color: #81f0d7;
-}
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-  color: #2a81c7;
-  background-color: #81f0d7;
-}
-.navbar-default .navbar-toggle {
-  border-color: #81f0d7;
-}
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-  background-color: #81f0d7;
-}
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #5c5858;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form {
-  border-color: #5c5858;
-}
-.navbar-default .navbar-link {
-  color: #5c5858;
-}
-.navbar-default .navbar-link:hover {
-  color: #2a81c7;
-}
-
-@media (max-width: 767px) {
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #5c5858;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #2a81c7;
-  }
-  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
-    color: #2a81c7;
-    background-color: #81f0d7;
-  }
-}
-
-.form-1 {
-    /* Size & position */
-    width: 300px;
-    margin: 60px auto 30px;
-    padding: 10px;
-    position: relative; /* For the submit button positioning */
-
-    /* Styles */
-    box-shadow: 
-        0 0 1px rgba(0, 0, 0, 0.3), 
-        0 3px 7px rgba(0, 0, 0, 0.3), 
-        inset 0 1px rgba(255,255,255,1),
-        inset 0 -3px 2px rgba(0,0,0,0.25);
-    border-radius: 5px;
-    background: linear-gradient(#eeefef, #ffffff 10%);
-}
-
-.form-1 .field {
-    position: relative; /* For the icon positioning */
-}
 
 /*대수능 평가원 기출문제 선택란*/
 #gichulneyeond_suntaek{
      margin-top:0;
      width:70%;
      max-width:500px;
-     background-color: none !important;
+     background-color: none;
      background-image: none;
      position:center;
 }

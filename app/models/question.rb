@@ -1,4 +1,4 @@
 class Question < ActiveRecord::Base
     mount_uploader :image, S3uploaderUploader
-    acts_as_commentable
+    has_many :comments
 end

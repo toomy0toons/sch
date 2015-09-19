@@ -30,8 +30,8 @@
   #user.skip_confirmation!
   user3.save!
   
-  for l in [2010, 2011, 2012, 2013, 2014, 2015]
-   for k in [6,9,11]
+  for l in ['2010', '2011', '2012', '2013', '2014', '2015']
+   for k in ['6','9','11']
     for j in ['A','B'] 
      for i in 1..30
      

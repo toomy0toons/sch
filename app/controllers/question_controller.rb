@@ -4,11 +4,6 @@ class QuestionController < ApplicationController
     
     def look
         @questions = Question.all
-        
-        @questions.each do |i|
-        @comments = i.comment_threads.order('created+at desc')
-        @new_comment = Comment.build_from(i, current_user.name, "")
-        end
     end
     
     def new
