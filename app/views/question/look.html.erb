@@ -2,7 +2,7 @@
   <div class="container">
     <div style="position:fixed; right: 70px; bottom:70px;">
       <br>
-      <button type="button" class="btn btn-default" onclick="location.href='https://sch0906-toomy0toons-2.c9.io/question/write' ">
+      <button type="button" class="btn btn-default" onclick="location.href='https://sch0906-toomy0toons-2.c9.io/question/new'">
         <h4><span class="glyphicon glyphicon-pencil" aria-hidden="true">질문작성하기</span></h4>
       </button>
     </div>
@@ -34,16 +34,16 @@
               <th scope="row">태그</th>
               <td><%=i.tag%></td>
           </tr>
+          </tr>
+           <td><button type="submit" onclick="location.href='https://sch0906-toomy0toons-2.c9.io/question/modify/<%=i.id%>'">수정</button></td>
+           <td><button type="submit" onclick="location.href='https://sch0906-toomy0toons-2.c9.io/question/delete/<%=i.id%>'">삭제</button></td>
+          </tr>
         <br>
       </table>
     </div>
     <% end %>
     <br>
     <hr>
-    <br>
     <%= render "/home/footer" %>
   </div>
-  
-  <%= render "/home/loginModal" %>
-  
 </body>

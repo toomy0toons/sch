@@ -2,18 +2,18 @@
 
 <div class="container"> 
     <div class="form-style-5">
-        <form action="/question/modify/<%=@modify_question.id%>" method = "POST" enctype = "multipart/form-data">
+        <form action="/question/update/<%=@modify_question.id%>" method = "POST" enctype = "multipart/form-data">
         <fieldset>
         <legend><span class="number"></span> 제목</legend>
-        <input type="title" name="title">
+        <input type="title" name="title" value="<%=@modify_question.title%>" required>
         <legend><span class="number"></span> 작성자</legend>
-        <input type="writer" name="writer" placeholder="writer">
+        <input type="writer" name="writer" value="<%=@modify_question.writer%>">
         <legend><span class="number"></span> 설명</legend>
-        <textarea rows="30" cols="159" name="description"><%=@modify_question.description%></textarea>
+        <textarea rows="10" cols="159" name="new_description" required><%=@modify_question.description%></textarea>
         <legend><span class="number"></span> 첨부이미지</legend>
-        <input type = "file" name = "image_file"><br>
+        <input type = "file" name = "new_image_file"><br>
         <legend><span class="number"></span> 태그</legend>
-        <input type="tag" name="tag" placeholder="tag"><br>
+        <input type="tag" name="tag" value="<%=@modify_question.tag%>"><br>
         </fieldset>
         <br>
         <br>

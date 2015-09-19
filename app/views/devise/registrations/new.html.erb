@@ -36,7 +36,8 @@
       
       <div class="field">
         <%= f.label :date_of_birth %><br />
-        <%= f.date_select :date_of_birth %>
+        <%= f.date_select(:date_of_birth,:start_year => 1940, :end_year => Date.today.year - 5,
+        :default => Date.today - 5.year, :use_two_digit_numbers => :true)%>
       </div>
     
       <div class="actions">
@@ -47,8 +48,6 @@
     <%= render "devise/shared/links" %>
     
     <hr>
-    <footer>
-      <p>&copy; Bori-corporation</p>
-    </footer>
+    <%= render "/home/footer" %>
   </div>
 </body>

@@ -1,167 +1,79 @@
 <body>
-  <div class="container" >
-    <div class="btn-group" role="group" aria-label="..." id="ab_choice_button">
-      <button type="button" class="btn active" onClick="location.href='https://sch0906-toomy0toons-2.c9.io/problem/sim201406a'">A형</button>
-      <button type="button" class="btn btn-default" onClick="location.href='https://sch0906-toomy0toons-2.c9.io/problem/sim201406b'">B형</button>
+  <div class="container">
+    <div align="center" style="padding-bottom:0px;position:fixed;width:130%;">
+      <%= render "/home/probchoice" %>
+      <div class="btn-group" role="group" aria-label="..." id="ab_choice_button">
+        <button type="button" class="btn active" onClick="location.href='https://sch0906-toomy0toons-2.c9.io/problem/sim201406a'">A형</button>
+        <button type="button" class="btn btn-default" onClick="location.href='https://sch0906-toomy0toons-2.c9.io/problem/sim201406b'">B형</button>
+      </div>
     </div>
     
-    <%= render "/home/probchoice" %>
 
-    <div style="overflow:hidden;" body style="width:100%;" id="munjae">
-      <section id="1">
+    
+    <%= @problems.each do |j| %>
+    <% if j.image_link[0,20] == "/problemdb/2014/6/A/"%>
+    <section id=<%= j.number %>>
+      <br>
+      <br>
+      <div style="overflow:hidden;" body style="width:100%;" id="munjae" >
+        <div class="form-style-6">
+          <div class="form-style-5">
+            <p><%= j.number %>번 문제</p>
+            
+            <img src="<%=j.image_link%>" class="img-responsive" alt="Responsive image"><br>
+          </div>
+          
+          <% j.answers.each do |i| %>
+          <div class="form-style-5">
+            <fieldset>
+              <tr>
+                  <th scope="col">글쓴이</th>
+                  <td scope="col"><%=i.writer%></td>
+              </tr>
+              <tr>
+                  <td><img src="<%=i.image.url%>" width="500px"></td>
+              </tr>
+              <tr>
+                  <th scope="row">설명</th>
+                  <td><%=i.description%></td>
+              </tr>
+              <tr>
+                  <th scope="row">태그</th>
+                  <td><%=i.tag%></td>
+              </tr>
+              </tr>
+            </fieldset>
+          </div>
+          <% end %>
+          
+          <div class="form-style-5">
+            <form method = "POST" action= "/problem/update" enctype = "multipart/form-data">
+              <fieldset>
+                <input type="hidden" name="problem_id" value="<%=j.id %>">
+                <legend><span class="number"></span>답변하기</legend>
+                <textarea rows="5" cols="50" name="description" placeholder="description" required></textarea>
+                <input type = "file" name = "image_file">
+                <input type="text" name="tag" placeholder="tag">
+              </fieldset>
+              <input type="submit" value="등록">
+            </form>
+          </div>
+          <br>
+        </div>
         <br>
-        <p>1번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_01.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="2">
         <br>
-        <p>2번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_02.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="3">
         <br>
-        <p>3번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_03.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="4">
         <br>
-        <p>4번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_04.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="5">
         <br>
-        <p>5번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_05.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="6">
         <br>
-        <p>6번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_06.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="7">
         <br>
-        <p>7번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_07.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="8">
         <br>
-        <p>1번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_08.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="9">
-        <br>
-        <p>9번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_09.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="10">
-        <br>
-        <p>10번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_10.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="11">
-        <br>
-        <p>11번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_11.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="12">
-        <br>
-        <p>12번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_12.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="13">
-        <br>
-        <p>13번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_13.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="14">
-        <br>
-        <p>14번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_14.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="15">
-        <br>
-        <p>15번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_15.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="16">
-        <br>
-        <p>16번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_16.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="17">
-        <br>
-        <p>17번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_17.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="18">
-        <br>
-        <p>18번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_18.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="19">
-        <br>
-        <p>19번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_19.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="20">
-        <br>
-        <p>20번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_20.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="21">
-        <br>
-        <p>21번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_21.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="22">
-        <br>
-        <p>22번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_22.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="23">
-        <br>
-        <p>23번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_23.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="24">
-        <br>
-        <p>24번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_24.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="25">
-        <br>
-        <p>25번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_25.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="26">
-        <br>
-        <p>26번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_26.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="27">
-        <br>
-        <p>27번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_27.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="28">
-        <br>
-        <p>28번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_28.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="29">
-        <br>
-        <p>29번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_29.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-      <section id="30">
-        <br>
-        <p>30번 문제</p>
-        <img src="/problemdb/2014/2014 6/A/2014_06_a_30.png"class="img-responsive" alt="Responsive image"><br>
-      </section><br>
-    </div>
+      </div>
+    </section>
+    <% end %>
+    <% end %>
     <br>
     <hr>
-    <br>
     <%= render "/home/footer" %>
   
     <!-- Bootstrap core JavaScript
@@ -175,6 +87,4 @@
   
     <script src="offcanvas.js"></script>
   </div>
-    
-  <%= render "/home/loginModal" %>
 </body>

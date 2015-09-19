@@ -1,11 +1,12 @@
 <body>
   <div class="container">
-    <div class="btn-group" role="group" aria-label="..." id="ab_choice_button">
-      <button type="button" class="btn btn-default" onClick="location.href='https://sch0906-toomy0toons-2.c9.io/problem/sim201406a'">A형</button>
-      <button type="button" class="btn active" onClick="location.href='https://sch0906-toomy0toons-2.c9.io/problem/sim201406b'">B형</button>
+    <div align="center" style="padding-bottom:0px;position:fixed;width:10%;">
+      <%= render "/home/probchoice" %>
+      <div class="btn-group" role="group" aria-label="..." id="ab_choice_button">
+        <button type="button" class="btn btn-default" onClick="location.href='https://sch0906-toomy0toons-2.c9.io/problem/sim201406a'">A형</button>
+        <button type="button" class="btn active" onClick="location.href='https://sch0906-toomy0toons-2.c9.io/problem/sim201406b'">B형</button>
+      </div>
     </div>
-    
-    <%= render "/home/probchoice" %>
     
     <div style="overflow:hidden;" body style="width:100%;" id="munjae">
       <section id="1">
@@ -161,21 +162,17 @@
     </div>
     <br>
     <hr>
-    <br>
     <%= render "/home/footer" %>
   </div><!--/.container-->
-  
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-  
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-  
-    <script src="offcanvas.js"></script>
-  </div>
-  
-  <%= render "/home/loginModal" %>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="../../dist/js/bootstrap.min.js"></script>
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+  <script src="offcanvas.js"></script>
 </body>

@@ -14,6 +14,7 @@ gem 'carrierwave'
 gem 'fog'
 
 gem 'simple_form'
+gem 'acts_as_commentable_with_threading'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
