@@ -9,8 +9,13 @@ body
      font-size:0.75em;
      height:100%;
      position:center;
+
      background-color: transparent !important;
      background-image: none;
+}
+
+#join{
+    text-align: center;
 }
 
 #new_user.new_user{
@@ -104,6 +109,7 @@ body
     border-radius: 8px;
     font-family: Georgia, "Times New Roman", Times, serif;
 }
+
 .form-style-5{
     max-width: 1000px;
     padding: 10px 20px;

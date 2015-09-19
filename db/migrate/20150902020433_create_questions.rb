@@ -3,6 +3,7 @@ class CreateQuestions < ActiveRecord::Migration
     create_table :questions do |t|
       t.string :title
       t.string :writer
+      t.integer :total_votes, :default => 0
       t.text :description
       t.string :image
       t.string :tag

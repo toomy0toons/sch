@@ -1,41 +1,42 @@
-<body>
-  <div class="container" id="join">
+<body >
+  <div class="stand" id="join" >
     <h2>회원가입</h2>
     
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
     
       <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
+        <!--<%= f.label :email %><br />-->
+        <%= f.email_field :email, autofocus: true, :value=> "e-mail을 입력하세요"%>
       </div>
     
       <div class="field">
-        <%= f.label :password %>
+        <!--<%= f.label :password %>-->
         <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <!--<em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %>-->
+        <%= f.text_field :password, autocomplete: "off", :value=> "비밀번호를 입력하세요 (최소 4글자)"%>
+
       </div>
     
       <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <!--<%= f.label :password_confirmation %><br />-->
+        <%= f.text_field :password_confirmation, autocomplete: "off", :value=>"비밀번호를 다시 입력하세요" %>
       </div>
       
       <div class="field">
-        <%= f.label :name %><br />
-        <%= f.text_field :name %>
+        <!--<%= f.label :name %><br />-->
+        <%= f.text_field :name , autofocus: true, :value=> "이름을 입력하세요"%>
       </div>
       
       <div class="feild">
-        <%= f.label :is_female %><br />
-        <%= f.radio_button :is_female, '1' %> <%= f.label :is_female, "Female" %>
-        <%= f.radio_button :is_female, '0' %> <%= f.label :is_female, "Male" %>
+        <!--<%= f.label :is_female %><br />-->
+        <%= f.radio_button :is_female, '1' %> <%= f.label :is_female, "여자" %>
+        <%= f.radio_button :is_female, '0' %> <%= f.label :is_female, "남자" %>
       </div>
       
       <div class="field">
-        <%= f.label :date_of_birth %><br />
+        <!--<%= f.label :date_of_birth %><br />-->
         <%= f.date_select(:date_of_birth,:start_year => 1940, :end_year => Date.today.year - 5,
         :default => Date.today - 5.year, :use_two_digit_numbers => :true)%>
       </div>
