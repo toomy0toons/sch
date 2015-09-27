@@ -1,0 +1,23 @@
+<h1>수정</h1>
+
+<div class="container"> 
+    <div class="form-style-5">
+        <form action="/question/update/<%=@modify_.id%>" method = "POST" enctype = "multipart/form-data">
+        <fieldset>
+        <legend><span class="number"></span> 제목</legend>
+        <input type="title" name="title" value="<%=@modify_.title%>" required>
+        <legend><span class="number"></span> 작성자</legend>
+        <input type="writer" name="writer" value="<%=@modify_.writer%>">
+        <legend><span class="number"></span> 설명</legend>
+        <textarea rows="10" cols="159" name="new_description" required><%=@modify_.description%></textarea>
+        <legend><span class="number"></span> 첨부이미지</legend>
+        <input type = "file" name = "new_image_file"><br>
+        <legend><span class="number"></span> 태그</legend>
+        <input type="tag" name="tag" value="<%=@modify_.tag%>"><br>
+        </fieldset>
+        <br>
+        <br>
+        <input type="submit" value="등록" />
+        </form>
+    </div>
+</div>

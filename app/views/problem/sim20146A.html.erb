@@ -1,0 +1,106 @@
+<body>
+  <div class="container">
+    <div align="center" style="padding-bottom:0px;width:150%;">
+      <%= render "/home/probchoice" %>
+      <div class="btn-group" role="group" aria-label="..." id="ab_choice_button">
+        <button type="button" class="btn active" onClick="location.href='https://sch0906-toomy0toons-2.c9.io/problem/sim20146A'">A형</button>
+        <button type="button" class="btn btn-default" onClick="location.href='https://sch0906-toomy0toons-2.c9.io/problem/sim20146B'">B형</button>
+      </div>
+    </div>
+    
+
+    
+    <%= @problems.each do |j| %>
+    <% if j.image_link[0,20] == "/problemdb/2014/6/A/"%>
+    <section id=<%= j.number %>>
+      <br>
+      <br>
+      <div style="overflow:hidden;" body style="width:100%;" id="munjae" >
+        <div class="form-style-6">
+          <div class="form-style-5">
+            <p><%= j.number %>번 문제</p>
+            
+            <img src="<%=j.image_link%>" class="img-responsive" alt="Responsive image"><br>
+          </div>
+          
+          <% j.answers.each do |i| %>
+          <div class="form-style-5">
+            <fieldset>
+              <h6><span class="glyphicon glyphicon-list-alt"></span><div class="form-style-6">&nbsp;<%=i.title%></div></h6>
+              <h6><span class="glyphicon glyphicon-user"></span><div class="form-style-6">&nbsp;<%=i.writer%></div></h6>
+              <h6><span class="glyphicon glyphicon-paperclip"></span><div class="form-style-6">&nbsp;<img src="<%=i.image.url%>" width="500px"></div></h6>
+              <h6></h4><span class="glyphicon glyphicon-blackboard"></span><div class="form-style-6">&nbsp;<%=i.description%></div></h6>
+              <h6><span class="glyphicon glyphicon-tags"></span><div class="form-style-6">&nbsp;<%=i.tag%></div></h6>
+              <h6>
+                <div align="right">
+                  <form action="/problem/upvote" type="POST">
+                    <input type="hidden" name="current_url" id="hdn_current_url" value="">
+                    <input type="hidden" name="answer_id" value="<%=i.id %>">
+                    <input type="hidden" name="user_name" value="<%=current_user.email%>">
+                    &nbsp;<%=i.total_votes%>명이 좋아합니다
+                    <br>
+                    <button type="submit" class="btn btn-default" style="background-color:#b3eee1" value="like">
+                      <i class="glyphicon glyphicon-thumbs-up">좋아요</i>
+                    </button>
+                  </form>
+                </div>
+              </h6>
+              <button type="submit" class="btn btn-default" onclick="location.href='https://sch0906-toomy0toons-2.c9.io/problem/modify/<%=i.id%>'">
+                <i class="glyphicon glyphicon-edit">수정</i>
+              </button>
+            
+              <button type="submit" class="btn btn-default" onclick="location.href='https://sch0906-toomy0toons-2.c9.io/problem/delete/<%=i.id%>'">
+                <i class="glyphicon glyphicon-erase">삭제</i>
+              </button>
+              <br>
+            </fieldset>
+          </div>
+          <% end %>
+          
+          <div class="form-style-5">
+            <form method = "POST" action= "/problem/update" enctype = "multipart/form-data">
+              <fieldset>
+                <input type="hidden" name="current_url" id="hdn_current_url" value="">
+                <input type="hidden" name="problem_id" value="<%=j.id %>">
+                <legend><span class="number"><h5>답변</h5></span></legend>
+                <textarea rows="5" cols="50" name="description" placeholder="description" required></textarea>
+                <input type = "file" name = "image_file">
+                <input type="text" name="tag" placeholder="tag">
+              </fieldset>
+              <input type="submit" value="등록">
+            </form>
+            </div>
+          </div>
+          <br>
+        </div>
+        <br>
+        <br>
+      </div>
+    </section>
+    <% end %>
+    <% end %>
+    <br>
+    <hr>
+    <%= render "/home/footer" %>
+  
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  
+    <script src="offcanvas.js"></script>
+    
+    <script>
+      $(document).ready(function() {
+        var url = document.URL;
+        var host = document.location.host;
+        var curr_url = url.substring(url.search(host) + host.length)
+        $('#hdn_current_url').val(curr_url);
+      });
+    </script>
+  </div>
+</body>

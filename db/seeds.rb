@@ -8,6 +8,7 @@
 
  user = User.new(
       :email                 => "tom@tom.com",
+      :name => "이탐",
       :password              => "1234",
       :password_confirmation => "1234"
   )
@@ -16,6 +17,7 @@
   
   user2 = User.new(
       :email                 => "hsw@hsw.com",
+      :name => "홍성욱",
       :password              => "1234",
       :password_confirmation => "1234"
   )
@@ -24,6 +26,7 @@
   
    user3 = User.new(
       :email                 => "ljy@lyj.com",
+      :name => "이주영",
       :password              => "1234",
       :password_confirmation => "1234"
   )

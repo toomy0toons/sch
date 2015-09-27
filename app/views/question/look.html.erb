@@ -12,57 +12,43 @@
     
     <% @questions.each do |i| %>
     <div class="container">
-      <div class="form-style-7">
+      <div class="form-style-5">
         <fieldset>
-          <table class="type05">
-            <legend<tr>
-              <th scope="row">제목</th>
-              <td><%=i.title%></td>
-            </tr>
-            <tr>
-              <th scope="row">글쓴이</th>
-              <td><%=i.writer%></td>
-            </tr>
-            <tr>
-              <th scope="row">첨부 이미지</th>
-              <td><img src="<%=i.image.url%>" width="500px"></td>
-            </tr>
-            <tr>
-              <th scope="row">설명</th>
-              <td><%=i.description%></td>
-            </tr>
-            <tr>
-              <th scope="row">태그</th>
-              <td><%=i.tag%></td>
-            </tr>
-            <tr>
-              <th scope="row"></th>
-              <td><%=i.total_votes%> 명이 좋아합니다</td>
-            </tr>
-            <tr>
-              <td>
-                <button type="submit" class="btn btn-default" onclick="location.href='https://sch0906-toomy0toons-2.c9.io/question/modify/<%=i.id%>'">
-                  <i class="glyphicon glyphicon-edit">수정</i>
+          <h6><span class="glyphicon glyphicon-list-alt"></span><div class="form-style-6">&nbsp;<%=i.title%></div></h6>
+          <h6><span class="glyphicon glyphicon-user"></span><div class="form-style-6">&nbsp;<%=i.writer%></div></h6>
+          <h6><span class="glyphicon glyphicon-paperclip"></span><div class="form-style-6">&nbsp;<img src="<%=i.image.url%>" width="500px"></div></h6>
+          <h6><span class="glyphicon glyphicon-blackboard"></span><div class="form-style-6">&nbsp;<%=i.description%></div></h6>
+          <h6><span class="glyphicon glyphicon-tags"></span><div class="form-style-6">&nbsp;<%=i.tag%></div></h6>
+          <h6>
+            <div align="right">
+              <form action="/question/upvote" type="POST">
+                <input type="hidden" name="question_id" value="<%=i.id %>">
+                &nbsp;<%=i.total_votes%>명이 좋아합니다
+                <br>
+                <button type="submit" class="btn btn-default" value="like">
+                  <i class="glyphicon glyphicon-thumbs-up">좋아요</i>
                 </button>
-              </td>
-              <td>
-                <button type="submit" class="btn btn-default" onclick="location.href='https://sch0906-toomy0toons-2.c9.io/question/delete/<%=i.id%>'">
-                  <i class="glyphicon glyphicon-erase">삭제</i>
-                </button>
-              </td>
-              <td>
-                <form action="/question/upvote" type="POST">
-                  <input type="hidden" name="question_id" value="<%=i.id %>">
-                  <input type="hidden" name="user_name" value="<%=current_user.email%>">
-                  <button type="submit" class="btn btn-default" style="background-color:#b3eee1" value="like">
-                    <i class="glyphicon glyphicon-thumbs-up">좋아요</i>
-                  </button>  
-                  <br>
-                </form>
-              </td>
-            </tr>
-            <br>
-          </table>
+              </form>
+            </div>
+          </h6>
+          
+          <button type="submit" class="btn btn-default" onclick="location.href='https://sch0906-toomy0toons-2.c9.io/question/modify/<%=i.id%>'">
+            <i class="glyphicon glyphicon-edit">수정</i>
+          </button>
+        
+          <button type="submit" class="btn btn-default" onclick="location.href='https://sch0906-toomy0toons-2.c9.io/question/delete/<%=i.id%>'">
+            <i class="glyphicon glyphicon-erase">삭제</i>
+          </button>
+          
+          <button class="btn btn-default" data-toggle="collapse" data-target="#<%=i.id%>comment">
+            <span class="glyphicon glyphicon-comment"></span>댓글달기
+          </button>
+
+          <div id="<%=i.id%>comment" class="collapse">
+          <%=i.id%>comment
+          </div>
+          
+          
         </fieldset>
       </div>
     </div>

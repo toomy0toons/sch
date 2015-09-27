@@ -63,7 +63,7 @@ class QuestionController < ApplicationController
         if a.nil?
         my_vote = Vote.new
         my_vote.vote_address = params[:question_id]
-        my_vote.voter = params[:user_name]
+        my_vote.voter = current_user.email
         my_vote.save
         
         @question=Question.find(params[:question_id])

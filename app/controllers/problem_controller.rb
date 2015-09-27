@@ -193,7 +193,7 @@ class ProblemController < ApplicationController
     end
     
     def delete
-        delete_answer = Answer.find(params[:id])
+        delete_answer = Problem.find(params[:id])
         
         if current_user.name == delete_answer.writer
             delete_answer.destroy
@@ -203,5 +203,43 @@ class ProblemController < ApplicationController
             redirect_to params[:current_url]
         end
     end
+    
+    def modify
+        @modify_problem = Problem.find(params[:id])
+    end
+    
+        
+    def upvote
+        
+        a = Vote.where(:voter => params[:user_name],:vote_address =>params[:answer_id]).take
+        
+        if a.nil?
+        my_vote = Vote.new
+        my_vote.vote_address = params[:answer_id]
+        my_vote.voter = params[:user_name]
+        my_vote.save
+        
+        @answer=Answer.find(params[:answer_id])
+        @answer.total_votes += 1
+        @answer.save
+        
+        else
+        
+        destroy_vote = Vote.where(:voter => params[:user_name]).take
+        destroy_vote.destroy
+        
+        @answer=Answer.find(params[:answer_id])
+        @answer.total_votes -= 1
+        @answer.save
+        
+        end
+        redirect_to params[:current_url]
+        
+        
+        
+    end
+    
+    
+    
     
 end

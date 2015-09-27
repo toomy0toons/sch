@@ -1,0 +1,95 @@
+<body>
+  <div class="container">
+    <div align="center" style="padding-bottom:0px;width:10%;">
+      <%= render "/home/probchoice" %>
+      <div class="btn-group" role="group" aria-label="..." id="ab_choice_button">
+        <button type="button" class="btn btn-default" onClick="location.href='https://sch0906-toomy0toons-2.c9.io/problem/sim201411A'">A형</button>
+        <button type="button" class="btn active" onClick="location.href='https://sch0906-toomy0toons-2.c9.io/problem/sim201411B'">B형</button>
+      </div>
+    </div>
+    
+
+    
+    <%= @problems.each do |j| %>
+    <% if j.image_link[0,20] == "/problemdb/2014/11/B/"%>
+    <section id=<%= j.number %>>
+      <br>
+      <br>
+      <div style="overflow:hidden;" body style="width:100%;" id="munjae" >
+        <div class="form-style-6">
+          <div class="form-style-5">
+            <p><%= j.number %>번 문제</p>
+            
+            <img src="<%=j.image_link%>" class="img-responsive" alt="Responsive image"><br>
+          </div>
+          
+          <% j.answers.each do |i| %>
+          <div class="form-style-5">
+            <fieldset>
+              <tr>
+                  <th scope="col">글쓴이</th>
+                  <td scope="col"><%=i.writer%></td>
+              </tr>
+              <tr>
+                  <td><img src="<%=i.image.url%>" width="500px"></td>
+              </tr>
+              <tr>
+                  <th scope="row">설명</th>
+                  <td><%=i.description%></td>
+              </tr>
+              <tr>
+                  <th scope="row">태그</th>
+                  <td><%=i.tag%></td>
+              </tr>
+              </tr>
+            </fieldset>
+          </div>
+          <% end %>
+          
+          <div class="form-style-5">
+            <form method = "POST" action= "/problem/update" enctype = "multipart/form-data">
+              <fieldset>
+                <input type="hidden" name="current_url" id="hdn_current_url" value="">
+                <input type="hidden" name="problem_id" value="<%=j.id %>">
+                <legend><span class="number"></span><a href = "#answer" data-toggle="collapse">답변하기</a></legend>
+                <textarea rows="5" cols="50" name="description" placeholder="description" required></textarea>
+                <input type = "file" name = "image_file">
+                <input type="text" name="tag" placeholder="tag">
+              </fieldset>
+              <input type="submit" value="등록">
+            </form>
+            </div>
+          </div>
+          <br>
+        </div>
+        <br>
+        <br>
+      </div>
+    </section>
+    <% end %>
+    <% end %>
+    <br>
+    <hr>
+    <%= render "/home/footer" %>
+  
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  
+    <script src="offcanvas.js"></script>
+    
+    <script>
+      $(document).ready(function() {
+        var url = document.URL;
+        var host = document.location.host;
+        var curr_url = url.substring(url.search(host) + host.length)
+        $('#hdn_current_url').val(curr_url);
+      });
+    </script>
+  </div>
+</body>
